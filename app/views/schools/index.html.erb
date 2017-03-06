@@ -1,0 +1,16 @@
+<div ng-app="app">
+  <div ng-controller="schoolsCtrl" ng-init="setup()">
+    <button ng-click="sortBy('total_students')">sort by enrollment total</button>
+    <button ng-click="sortBy('school_name')">sort by name</button>
+    <button ng-click="sortBy('boro')">sort by boro</button>
+
+    <div ng-repeat="school in schools | orderBy:orderAttribute:isDescending">
+      <p ng-click="hideInfo(school)"> {{school.school_name}} </p>
+      <p ng-if="school.infoVisible"> Boro: {{school.boro}} </p>
+      <p ng-if="school.infoVisible"> Total Students: {{school.total_students}} </p>
+      <p>---</p>
+    </div>
+    
+  </div>   
+</div>
+
