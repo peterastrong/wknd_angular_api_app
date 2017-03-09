@@ -3,4 +3,10 @@ Rails.application.routes.draw do
   root to: "schools#index"
 
   get "schools", to: "schools#index"
+
+  namespace :api do
+    namespace :v1 do
+      get "favorites", to: "favorites#index"
+    end
+  end 
 end

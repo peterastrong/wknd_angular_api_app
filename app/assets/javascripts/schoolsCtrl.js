@@ -24,9 +24,8 @@
       } else {
         $scope.isDescending = !$scope.isDescending;
       }
-      $scope.attribute = attribute;
+      $scope.orderAttribute = attribute;
     };
-
 
 
   }); 
