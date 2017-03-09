@@ -27,9 +27,11 @@
       $scope.orderAttribute = attribute;
     };
 
-    $scope.addFavorite = function() {
-      $http.post("/api/v1/favorites.json")
-    }
+    $scope.addFavorite = function(schoolName) {
+      $http.post("/api/v1/favorites.json").then(function(response) { 
+        $scope.favorites.push(response.data);
+      });
+    };
 
 
   }); 

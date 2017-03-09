@@ -1,18 +1,20 @@
+   <div>
+        <a href="/api/v1/favorites.json">click to see all favorites</a>
+    </div>
 <div ng-app="app">
   <div ng-controller="schoolsCtrl" ng-init="setup()">
-    <div>
-        
-    </div>
+ 
     <button ng-click="sortBy('total_students')">sort by enrollment total</button>
-    <button ng-click="sortBy('school_name')">sort by name</button>
+    <!-- the sort by total # not working properly, it seems to be sorting by the first digit like it is a string not by integers -->
+    <button ng-click="sortBy('school_name')">sort by name</button> 
     <button ng-click="sortBy('boro')">sort by boro</button>
-<!-- buttons not working check with andy/sami -->
+
 
     <div ng-repeat="school in schools | orderBy:orderAttribute:isDescending">
       <p ng-click="hideInfo(school)"> {{school.school_name}} </p>
       <p ng-if="school.infoVisible"> Boro: {{school.boro}} </p>
       <p ng-if="school.infoVisible"> Total Students: {{school.total_students}} </p>
-      <button ng-click="addFavorite(inputSchoolName)">Add this school to Favorites</button>
+      <button ng-click="addFavorite( {{school.school_name}} )">Add this school to Favorites</button>
       <p>---</p>
     </div>
     
