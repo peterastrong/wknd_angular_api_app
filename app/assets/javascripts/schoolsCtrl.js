@@ -27,6 +27,10 @@
       $scope.orderAttribute = attribute;
     };
 
+    $scope.addFavorite = function() {
+      $http.post("/api/v1/favorites.json")
+    }
+
 
   }); 
 }());

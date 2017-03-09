@@ -12,6 +12,7 @@
       <p ng-click="hideInfo(school)"> {{school.school_name}} </p>
       <p ng-if="school.infoVisible"> Boro: {{school.boro}} </p>
       <p ng-if="school.infoVisible"> Total Students: {{school.total_students}} </p>
+      <button ng-click="addFavorite(inputSchoolName)">Add this school to Favorites</button>
       <p>---</p>
     </div>
     
